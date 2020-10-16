@@ -26,5 +26,9 @@ class DatabaseSeeder extends Seeder
         ]);
         $admin->assignRole('Super Admin');
         $this->call(ComponentTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(ModelHasRolesTableSeeder::class);
+        $this->call(PatientsTableSeeder::class);
     }
 }

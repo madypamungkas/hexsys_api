@@ -34,4 +34,11 @@ Route::group(['middleware'=>['auth:api']], function(){
 
     // ambulan
     Route::resource('ambulan', 'API\AmbulanController');
+
+    //patient
+    Route::get('/pasien','API\PatientController@getAllPatient');
+    Route::get('/pasien/{id}','API\PatientController@getDetailPatient');
+    Route::post('/pasien-add','API\PatientController@createPatient');
+    Route::post('/pasien-edit/{id}','API\PatientController@updatePatient');
+    Route::delete('/pasien-delete/{id}','API\PatientController@deletePatient');
 });

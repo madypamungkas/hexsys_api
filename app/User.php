@@ -45,6 +45,11 @@ class User extends Authenticatable
         return $this->hasOne('App\Instansi', 'user_id', 'id');
     }
 
+    public function pasien()
+    {
+        return $this->hasOne('App\Patient', 'user_id', 'id');
+    }
+
     public function routeNotificationForFcm()
     {
         return $this->fcm_token;
