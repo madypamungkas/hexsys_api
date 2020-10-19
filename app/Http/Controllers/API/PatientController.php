@@ -15,7 +15,9 @@ class PatientController extends Controller
 
     public function getAllPatient(){
         try {
-            $data = Patient::get();
+
+
+            $data = Patient::where('user_id',Auth::id())->get();
 
             if(!$data) return $this->error("Pasien tidak ditemukan.", 404);
 
